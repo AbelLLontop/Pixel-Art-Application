@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+    <script defer src="https://unpkg.com/konva@9.2.0/konva.min.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #container{
+        background-color: #1f1f1f;
+      }
+      .actions{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .actions button{
+        padding: 1rem;
+      }
+      .actions input{
+        padding: 1rem;
+      }
+    </style>
+    <div id="container"></div>
+    <div class="actions">
+      <input type="number" min="1" max="30" value="25" id="inputdimension"  onchange="setDimension(this)">
+      <button onclick="setAction('draw')">Drawn</button>
+      <button onclick="setAction('erase')">Erase</button>
+      <input type="range"  min="0.4" max="1" step="0.1" value="0.8" id="range">
+      <input type="color" name="" id="inputColor">
+      <label for="">
+        <input type="checkbox" checked name="" onchange="setShowLines(this.checked)">
+      </label>
+      <button onclick="exportImage()">export</button>
+    </div>
+  </body>
+</html>
